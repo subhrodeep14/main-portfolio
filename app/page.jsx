@@ -10,7 +10,7 @@ const Home = () => {
     <section className="h-screen">
       <div className=" container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-12 xl:pb-24">
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Devloper</span>
             <h1 className="h1">
               Hello I'm <br/> <span className="text-accent">Subhrodeep Acharya</span>
@@ -28,7 +28,7 @@ const Home = () => {
                 </div>
             </div>
           </div>
-          <div>
+          <div className="order-1 xl:order-none mb-8 xl:mb-0 xl:pr-10 pt-2">
             <Photo/>
           </div>
         </div>
