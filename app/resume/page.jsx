@@ -1,3 +1,4 @@
+"use client"
 import { Info } from "lucide-react"
 import { FaHtml5,FaCss3,FaJs,FaFigma,FaNodeJs,FaReact} from "react-icons/fa"
 
@@ -79,7 +80,33 @@ const resume = () => {
     <motion.div className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0 " initial={{opacity:0}} animate={{opacity:1,transition:{
       ease:"easeIn",duration:0.4, delay:2.4
     }}}>
-      resume page
+      <div className=" container mx-auto">
+        <Tabs
+        defaultValue="skills"
+        className="flex flex-col xl:flex-row gap-[60px]">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsTrigger value="skills"> Skills</TabsTrigger>
+            <TabsTrigger value="about" > About me</TabsTrigger>
+            
+            <TabsTrigger value="education"> Education</TabsTrigger>
+            
+          </TabsList>
+          <div>
+            <TabsContent value="skills" className="w-full">
+              skills
+            </TabsContent>
+            <TabsContent value="about" className="w-full">
+              About
+              </TabsContent>
+              <TabsContent value="education" className="w-full">
+              education
+              </TabsContent>
+
+          </div>
+        </Tabs>
+    
+
+      </div>
     </motion.div>
   )
 }
