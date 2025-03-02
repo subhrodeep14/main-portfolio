@@ -22,11 +22,65 @@ const about=[{
   }]
 }]
 
+const exprerience=[{
+  icon:"/resume/badge.svg",
+  title:" My Experience",
+  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem nesciunt temporibus, beatae voluptatem nulla optio, facilis consectetur minima quaerat ducimus et",
+
+}]
+
+const education=[{
+  icon:"/resume/cap.svg",
+  title:" My Education",
+  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem nesciunt temporibus, beatae voluptatem nulla optio, facilis consectetur minima quaerat ducimus et",
+
+}]
+
+const skills=[{
+  title:" My Skills",
+  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem nesciunt temporibus, beatae voluptatem nulla optio, facilis consectetur minima quaerat ducimus et",
+  info:[{
+    icon:<FaHtml5/>,
+    title:"HTML"
+  },{
+    icon:<FaCss3/>,
+    title:"CSS"
+  },{
+    icon:<FaJs/>,
+    title:"JavaScript"
+  },{
+    icon:<FaReact/>,
+    title:"React"
+  },{
+    icon:<SiNextdotjs/>,
+    title:"Next.js"
+  },{
+    icon:<FaNodeJs/>,
+    title:"Node.js"
+  },{
+    icon:<SiTailwindcss/>,
+    title:"Tailwind CSS"
+  },{
+    icon:<FaFigma/>,
+    title:"Figma"
+  }]
+}]
+
+
+import {Tabs, TabsContent,TabsTrigger,TabsList} from "@/components/ui/tabs"
+
+import {Tooltip,TooltipTrigger,TooltipContent,TooltipProvider} from "@/components/ui/tooltip"
+
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { motion } from "framer-motion"
+
 const resume = () => {
   return (
-    <div>
+    <motion.div className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0 " initial={{opacity:0}} animate={{opacity:1,transition:{
+      ease:"easeIn",duration:0.4, delay:2.4
+    }}}>
       resume page
-    </div>
+    </motion.div>
   )
 }
 
