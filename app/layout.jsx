@@ -16,7 +16,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning
+    data-new-gr-c-s-check-loaded="14.1224.0"
+    data-gr-ext-installed=""
+    
+    >
       <body
         className={jetBrainsMono.variable}
       >
