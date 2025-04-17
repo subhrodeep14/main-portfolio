@@ -17,13 +17,15 @@ const Photo = () => {
           duration:4,
           ease:"easeInOut",
         }}}
-        className="w-[265px] h-[265px] xl:w-[398px] xl:h-[398px] mix-blend-lighten absolute">
+        className="w-[265px] h-[265px] xl:w-[398px] xl:h-[398px] mix-blend-lighten absolute overflow-hidden rounded-full top-0 left-0 z-10 object-fit-cover">
         <Image
           quality={100}
-          fill
+          width={500}
+          height={500}
+          
           alt=""
-          className="object-contain "
-         src="/avatar.final.1.png"/>
+          className="object-contain overflow-hidden "
+         src="/profile3.png"/>
 
         </motion.div>
 

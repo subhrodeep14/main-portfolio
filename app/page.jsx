@@ -16,7 +16,7 @@ const Home = () => {
             <h1 className="h1">
               Hello I'm <br/> <span className="text-accent text-[100px]">Subhrodeep Acharya</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[550px] mb-9 text-white/80">
               I excel at crafting elegent digital experience and I am proficient in various programing languages and technologies.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
