@@ -82,10 +82,10 @@ const work = () => {
                     <Link href={project.live}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group '>
+                            <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group hover:rotate-45 transition-all duration-500'>
                               <BsArrowUpRight className='text-white text-3xl group-hover:text-accent'/>
                             </TooltipTrigger>
-                            <TooltipContent>
+                            <TooltipContent >
                               <p>Live project</p>
                             </TooltipContent>
                           </Tooltip>
@@ -117,7 +117,11 @@ const work = () => {
                 
                 >
                   {projects.map((project,index)=>{
-                    return <SwiperSlide key={index} className='w-full' >  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50"></div></SwiperSlide>
+                    return <SwiperSlide key={index} className='w-full' > 
+                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                     <div></div>
+                     <div></div>
+                     </div></SwiperSlide>
                   })}
                 </Swiper>
 
