@@ -11,6 +11,7 @@ import {Tooltip,TooltipContent,TooltipProvider,TooltipTrigger} from "@/component
 import Link from 'next/link';
 import Image from 'next/image';
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
+import WorkSliderBtns from '@/components/WorkSliderBtns';
 
 
 const projects=[
@@ -19,7 +20,7 @@ const projects=[
   category:"Full Stack",
   title:"project 1",
   description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  stack:[{name:"Next.js"},{name:"Tailwind css"},{name:"Node.js"},{name:"Prisma"},{name:"Postgresql"}],
+  stack:[{name:"Next.js"},{name:"Tailwindcss"},{name:"Node.js"},{name:"Prisma"},{name:"Postgresql"}],
   image:"/work/thumb1.png",
   live:"",
   github:""
@@ -49,7 +50,7 @@ const projects=[
 
 const work = () => {
 
-  const[project,setProject]=useState(projects[0]);
+  const[project,setProject]=useState(projects[1]);
 
   const handleSlideChange=(swiper)=>{
     const currentIndex =swiper.activeIndex;
@@ -69,9 +70,9 @@ const work = () => {
 
               <p className='text-white/60'>{project.description}</p>
 
-              <ul className='flex gap-4'>
+              <ul className='gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
                 {project.stack.map((item,index)=>{
-                  return <li key={index} className='text-xl text-accent' >{item.name}
+                  return <li key={index} className='text-xl text-accent ' >{item.name}
                   {index !== project.stack.length -1 && ","}
                   </li>
                 })}
@@ -114,15 +115,21 @@ const work = () => {
                 slidesPerView={1}
                 className='xl:h-[520px] mb-12'
                 onSlideChange={handleSlideChange}
+                pagination={false}
+                navigation={false}
                 
                 >
                   {projects.map((project,index)=>{
                     return <SwiperSlide key={index} className='w-full' > 
                      <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                     <div></div>
-                     <div></div>
+                     <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 '></div>
+                     <div className='relative w-full h-full'>
+                      <Image src={project.image} alt="" fill className=' object-cover '/>
+                     </div>
                      </div></SwiperSlide>
                   })}
+
+                  <WorkSliderBtns containerStyles='flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none' btnStyles='bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all' />
                 </Swiper>
 
           </div>
