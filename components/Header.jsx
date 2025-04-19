@@ -6,7 +6,7 @@ import MobileNav from "./MobileNav"
 const Header = () => {
   return (
     <header className="pb-8 xl:pb-10 pt-4 xl:pt-6 text-white">
-        <div className=" container mx-auto flex justify-between items-center">
+        <div className=" px-4 md:container mx-auto flex justify-between items-center">
             <Link href='/'>
             <h1 className="text-4xl font-semibold">
                 Subhro<span className="text-accent">.</span>
