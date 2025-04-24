@@ -7,20 +7,20 @@ import { motion } from "framer-motion";
 const services=[{
   num:'01',
   title:" Full Stack Web Devlopment",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-  href:""
+  description:" Complete responsive web design and development",
+  href:"/contact"
 },
 {
   num:'02',
   title:"UI/UX Design",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-  href:""
+  description:"Beautiful and responsive UI/UX design",
+  href:"/contact"
 },
 {
   num:'03',
   title:"SEO Optimization",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-  href:""
+  description:"SEO optimization for your website",
+  href:"/contact"
 }];
 
 const Services = () => {

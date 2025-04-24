@@ -1,20 +1,21 @@
 "use client"
 import { Info } from "lucide-react"
 import { FaHtml5,FaCss3,FaJs,FaFigma,FaNodeJs,FaReact} from "react-icons/fa"
+import { SiTypescript ,SiPrisma,SiMongodb, SiPostgresql, SiGithub} from "react-icons/si";
 import Image from "next/image"
 
 import {SiTailwindcss,SiNextdotjs} from "react-icons/si"
 
 const about={
   title:"About Me",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem nesciunt temporibus, beatae voluptatem nulla optio, facilis consectetur minima quaerat ducimus et",
+  description:"I am a passionate full-stack web developer with a keen interest in UI/UX design. I have hands-on experience in building responsive and user-friendly web applications using modern technologies.",
   info:[{
     fieldName:"Name",
     fieldValue:"Subhrodeep Acharya"
   },
   {
     fieldName:"Email",
-    fieldValue:"subhrodeepacharya14@gmail.com"
+    fieldValue:"subhrodeepacharya19@gmail.com"
   },{
     fieldName:"Freelance",
     fieldValue:"Available"
@@ -27,44 +28,20 @@ const about={
 const exprerience={
   icon:"/resume/badge.svg",
   title:" My Experience",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem nesciunt temporibus, beatae voluptatem nulla optio, facilis consectetur minima quaerat ducimus et",
+  description:" Gained hands-on experience in building full-stack applications, and confident in delivering similar projects end-to-end.",
   items:[{
-    company:"Google",
-    role:"Frontend Developer",
-    duration:"2019-2021",
+    company:"Freelance",
+    role:"Full Stack web Developer",
+    duration:"2025-present",
   },
-  {
-    company:"Google",
-    role:"Frontend Developer",
-    duration:"2019-2021",
-  },
-  {
-    company:"Google",
-    role:"Frontend Developer",
-    duration:"2019-2021",
-  },
-  {
-    company:"Google",
-    role:"Frontend Developer",
-    duration:"2019-2021",
-  },
-  {
-    company:"Google",
-    role:"Frontend Developer",
-    duration:"2019-2021",
-  },
-  {
-    company:"Google",
-    role:"Frontend Developer",
-    duration:"2019-2021",
-  },
+  
 ]
 }
 
 const education={
   icon:"/resume/cap.svg",
   title:" My Education",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem nesciunt temporibus, beatae voluptatem nulla optio, facilis consectetur minima quaerat ducimus et",
+  description:"Pre-final year Electronics and Communication engineering student with hands-on experience in full-stack web development and UI/UX design.",
   items:[{
     school:"Kalyani Government Engineering College",
     degree:"B.Tech in Electronics and Communication Engineering",
@@ -84,7 +61,7 @@ const education={
 
 const skills={
   title:" My Skills",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem nesciunt temporibus, beatae voluptatem nulla optio, facilis consectetur minima quaerat ducimus et",
+  description:"Skilled in full-stack development with React, Node.js, Express, MongoDB, along with experience in Git, Postman, and responsive design.",
   info:[{
     icon:<FaHtml5/>,
     title:"HTML"
@@ -92,8 +69,8 @@ const skills={
     icon:<FaCss3/>,
     title:"CSS"
   },{
-    icon:<FaJs/>,
-    title:"JavaScript"
+    icon:<SiTypescript/>,
+    title:"TypeScript"
   },{
     icon:<FaReact/>,
     title:"React"
@@ -109,6 +86,18 @@ const skills={
   },{
     icon:<FaFigma/>,
     title:"Figma"
+  },{
+    icon:<SiPrisma/>,
+    title:"Prisma"
+  },{
+    icon:<SiMongodb/>,
+    title:"MongoDB"
+  },{
+    icon:<SiPostgresql/>,
+    title:"PostgreSQL"
+  },{
+    icon:<SiGithub/>,
+    title:"GitHub"
   }]
 }
 
@@ -127,16 +116,58 @@ const resume = () => {
     }}}>
       <div className=" container mx-auto">
         <Tabs
-        defaultValue="ex"
+        defaultValue="about"
         className="flex flex-col xl:flex-row gap-[60px]">
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-          <TabsTrigger value="ex"> Exprerience</TabsTrigger>
+          <TabsTrigger value="about" > About me</TabsTrigger>
           <TabsTrigger value="skills"> Skills</TabsTrigger>
-            <TabsTrigger value="about" > About me</TabsTrigger>
-      
+          <TabsTrigger value="ex"> Exprerience</TabsTrigger>
             <TabsTrigger value="education"> Education</TabsTrigger>           
           </TabsList>
           <div className="min-h-[70vh] w-full">
+          <TabsContent value="about" className="w-full text-center xl:text-left">
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold text-accent ">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                <ul className="grid grid-cols-1 gap-y-6 min-w-[750px] mx-auto xl:mx-0">
+                  {about.info.map((info,index)=>{
+                    return <li key={index} className="flex items-center justify-start xl:justify-start gap-4">
+                      <span className="text-accent">{info.fieldName} -</span>
+                      <span className="text-xl">{info.fieldValue}</span>
+                    </li>
+                  })}
+                </ul>
+              </div>
+          </TabsContent>
+          <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold text-accent ">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
+                </div>
+                <ScrollArea className="h-[400px]">
+                <ul className="grid grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-7">
+                  {skills.info.map((skill,index)=>{
+                    return <li key={index} >
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          <TooltipTrigger className="w-full h-[150px] bg-[#232329] mb-8 rounded-xl flex items-center justify-center group">
+                            <div className="text-6xl group-hover:text-accent transition-all duration-300 ">
+                              {skill.icon}
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p className=" capitalize">{skill.title}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+
+                    </li>
+                  })}     
+                </ul>
+                </ScrollArea>
+              </div>
+          </TabsContent>
           <TabsContent value="ex" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold text-accent">{exprerience.title}</h3>
@@ -157,47 +188,8 @@ const resume = () => {
                 </ScrollArea>
               </div>
           </TabsContent>
-          <TabsContent value="skills" className="w-full h-full">
-              <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold text-accent ">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
-                </div>
-                <ul className="grid grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-7">
-                  {skills.info.map((skill,index)=>{
-                    return <li key={index} >
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip>
-                          <TooltipTrigger className="w-full h-[150px] bg-[#232329]  rounded-xl flex items-center justify-center group">
-                            <div className="text-6xl group-hover:text-accent transition-all duration-300 ">
-                              {skill.icon}
-                            </div>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p className=" capitalize">{skill.title}</p>
-                            </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-
-                    </li>
-                  })}     
-                </ul>
-              </div>
-          </TabsContent>
-          <TabsContent value="about" className="w-full text-center xl:text-left">
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold text-accent ">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                <ul className="grid grid-cols-1 gap-y-6 min-w-[750px] mx-auto xl:mx-0">
-                  {about.info.map((info,index)=>{
-                    return <li key={index} className="flex items-center justify-start xl:justify-start gap-4">
-                      <span className="text-accent">{info.fieldName} -</span>
-                      <span className="text-xl">{info.fieldValue}</span>
-                    </li>
-                  })}
-                </ul>
-              </div>
-          </TabsContent>
+          
+          
           <TabsContent value="education" className="w-full">
               <div  className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold text-accent">{education.title}</h3>
