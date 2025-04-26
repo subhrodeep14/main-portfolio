@@ -19,11 +19,11 @@ const projects=[
   num:"01",
   category:"Full Stack",
   title:"project 1",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  stack:[{name:"Next.js"},{name:"Tailwindcss"},{name:"Node.js"},{name:"Prisma"},{name:"Postgresql"}],
+  description:"",
+  stack:[{name:"React.js"},{name:"Tailwindcss"}],
   image:"/work/thumb1.png",
-  live:"",
-  github:""
+  live:"https://real-estate-nine-blush.vercel.app/",
+  github:"https://github.com/subhrodeep14/Real-Estate"
 },  {
   num:"02",
   category:"frontend",
@@ -80,7 +80,7 @@ const work = () => {
 
               <div className='border border-white/20 '></div>
                   <div className='flex items-center gap-4'>
-                    <Link href={project.live}>
+                    <Link href={project.live} target='_blank' rel='noreferrer'>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group hover:rotate-45 transition-all duration-500'>
@@ -93,7 +93,7 @@ const work = () => {
                           
                           </TooltipProvider> 
                     </Link>
-                    <Link href={project.github}>
+                    <Link href={project.github} target='_blank' rel='noreferrer'>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group '>
