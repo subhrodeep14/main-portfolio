@@ -17,7 +17,7 @@ import WorkSliderBtns from '@/components/WorkSliderBtns';
 const projects=[
   {
   num:"01",
-  category:"Full Stack",
+  category:"Frontend",
   title:"project 1",
   description:"",
   stack:[{name:"React.js"},{name:"Tailwindcss"}],
