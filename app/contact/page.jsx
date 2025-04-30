@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
@@ -28,7 +29,33 @@ const info=[
 ]
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 const contact = () => {
+ 
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "2cfb6c69-edd3-4566-9c91-34cd861f7140");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return (
     <motion.section
     initial={{opacity:0}} animate={{opacity:1,transition:{
@@ -40,33 +67,33 @@ const contact = () => {
         <div className="flex flex-col  xl:flex-row gap-[30px]">
          {/*from */}
         <div className="xl:w-[54%] order-2 xl:order-none ">
-         <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl h-full">
+         <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl h-full" onSubmit={onSubmit}>
           <h3 className="text-4xl text-accent">Let's work together</h3>
-          <p className="text-white/60">Lorem, ipsum dolor sit amet consectetur adipisicing elit.aperiam culpa ullam temporibus nemo suscipit harum? Ex.</p>
+          <p className="text-white/60"></p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Input type="firstname" placeholder='Firstname'/>
-            <Input type="lastname" placeholder='Lastname'/>
-            <Input type="email" placeholder='Email address'/>
-            <Input type="phone" placeholder='Phone Number'/>
+            <Input name="firstname" type="text" placeholder='Firstname'/>
+            <Input  name="lastname" type="text" placeholder='Lastname'/>
+            <Input name="email" type="email" placeholder='Email address'/>
+            <Input name="phone" type='number' placeholder='Phone Number'/>
           </div>
-          <Select placeholder="">
+          <Select placeholder="" name="service">
             <SelectTrigger className="w-full" >
               <SelectValue placeholder='Select a Service'/>
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
                 <SelectLabel value="service1" className="">Select a Service</SelectLabel>
-                <SelectItem value='est'>Web Development</SelectItem>
-                <SelectItem value='cst'>UI/UX Design</SelectItem>
-                <SelectItem value='mst'>Logo Design</SelectItem>
+                <SelectItem value='Web Deveopment'>Web Development</SelectItem>
+                <SelectItem value='UI/UX Design'>UI/UX Design</SelectItem>
+                <SelectItem value='Logo Design'>Logo Design</SelectItem>
                 
               </SelectGroup>
             </SelectContent>
             </Select>
 
-            <Textarea className='h-[200px]' placeholder="Type your message here"/>
+            <Textarea className='h-[200px]' type="message"  name="text" placeholder="Type your message here"/>
 
-            <Button size='md' className="bg-accent max-w-[300px]  hover:bg-accent/80 transition-all duration-300 ease-in-out">Send Message</Button>
+            <Button type="submit" size='md' className="bg-accent max-w-[300px]  hover:bg-accent/80 transition-all duration-300 ease-in-out">Send Message</Button>
 
          </form>
         </div>
