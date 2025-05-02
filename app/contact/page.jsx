@@ -17,7 +17,7 @@ const info=[
   {
     icon:<FaEnvelope/>,
     title:"Email",
-    description:"subhrodeepacaharya19@gmail.com",
+    description:"subhrodeep022@gmail.com",
     
   },
   {
@@ -58,12 +58,10 @@ const contact = () => {
   };
   return (
     <motion.section
-    initial={{opacity:0}} animate={{opacity:1,transition:{
-      ease:"easeIn",duration:0.4, delay:2.4
-    }}}
+    initial={{opacity:0}} animate={{opacity:1,transition:{duration:0.2,delay:1 ,ease:"easeIn"}}}
     className="py-6"
     >
-      <div className="px-7 md:container mx-auto ">
+      <div className="px-4 md:container mx-auto ">
         <div className="flex flex-col  xl:flex-row gap-[30px]">
          {/*from */}
         <div className="xl:w-[54%] order-2 xl:order-none ">
@@ -107,7 +105,7 @@ const contact = () => {
                 </div>
                 <div className="flex-1">
                   <p className="text-white/60">{item.title}</p>
-                  <h3 className="text-xl ">{item.description}</h3>
+                  <h3 className="text-xl max-w-[250px] ">{item.description}</h3>
                 </div>
               </li>
             })}

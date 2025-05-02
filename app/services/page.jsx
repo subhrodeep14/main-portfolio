@@ -25,11 +25,11 @@ const services=[{
 
 const Services = () => {
   return (
-   <section className="flex flex-col justify-center min-h-[80vh] py-12 xl:py-0">
-    <div className=" mx-auto container">
+   <section className="flex flex-col justify-center min-h-[80vh] py-12  xl:py-0">
+    <div className=" mx-auto md:container px-4">
       <motion.div
       className=" grid grid-cols-1 md:grid-cols-2 gap-[60px]"
-      initial={{opacity:0}} animate={{opacity:1,transition:{duration:0.4,delay:2.4 ,ease:"easeIn"}}}>
+      initial={{opacity:0}} animate={{opacity:1,transition:{duration:0.2,delay:1 ,ease:"easeIn"}}}>
         {services.map((service,index)=>{
           return <div key={index}
           className=" flex flex-1 flex-col justify-center gap-6 group">

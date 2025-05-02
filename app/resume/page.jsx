@@ -12,11 +12,11 @@ const about={
   info:[{
     fieldName:"Name",
     fieldValue:"Subhrodeep Acharya"
-  },
-  {
+  }, {
     fieldName:"Email",
-    fieldValue:"subhrodeepacharya19@gmail.com"
-  },{
+    fieldValue:"subhrodeep022@gmail.com"
+  },
+ {
     fieldName:"Freelance",
     fieldValue:"Available"
   },{
@@ -111,10 +111,10 @@ import { motion } from "framer-motion"
 
 const resume = () => {
   return (
-    <motion.div className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0 " initial={{opacity:0}} animate={{opacity:1,transition:{
-      ease:"easeIn",duration:0.4, delay:2.4
-    }}}>
-      <div className=" container mx-auto">
+    <motion.div 
+    initial={{opacity:0}} animate={{opacity:1,transition:{duration:0.2,delay:1 ,ease:"easeIn"}}}
+    className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0 " >
+      <div className="md:container mx-auto px-4">
         <Tabs
         defaultValue="about"
         className="flex flex-col xl:flex-row gap-[60px]">
@@ -124,16 +124,16 @@ const resume = () => {
           <TabsTrigger value="ex"> Exprerience</TabsTrigger>
             <TabsTrigger value="education"> Education</TabsTrigger>           
           </TabsList>
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[70vh] w-[350px] md:w-full">
           <TabsContent value="about" className="w-full text-center xl:text-left">
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold text-accent ">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                <ul className="grid grid-cols-1 gap-y-6 min-w-[750px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1  gap-y-6 md:min-w-[750px] w-[300px] mx-auto px-0 text-left xl:mx-0">
                   {about.info.map((info,index)=>{
                     return <li key={index} className="flex items-center justify-start xl:justify-start gap-4">
                       <span className="text-accent">{info.fieldName} -</span>
-                      <span className="text-xl">{info.fieldValue}</span>
+                      <span className="text-lg max-w-[250px]">{info.fieldValue}</span>
                     </li>
                   })}
                 </ul>
@@ -196,10 +196,10 @@ const resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
               </div>
               <div>
-              <ScrollArea className="h-[400px]">
+              <ScrollArea className="h-[500px]">
                   <ul className="grid grid-cols-1  gap-[30px]">
                     {education.items.map((item,index)=>{
-                      return <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-1 lg:items-start">
+                      return <li key={index} className="bg-[#232329] h-[200px] mt-3 py-7 px-10 rounded-xl flex flex-col justify-center items-center gap-1 lg:items-start">
                         <span className="text-accent">{item.duration}</span>
                         <h3 className="text-xl max-w-[360px] min-h-[100px] text-center lg:text-left">{item.degree}</h3>
                         <div className="flex items-center gap-3">

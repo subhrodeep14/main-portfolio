@@ -9,12 +9,12 @@ import { FiDownload } from "react-icons/fi"
 const Home = () => {
   return (
     <section className="h-screen ">
-      <div className=" container mx-auto h-full">
+      <div className=" px-4 md:container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-12 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Devloper</span>
             <h1 className="h1">
-              Hello I'm <br /> <span className="text-accent text-[100px]">Subhrodeep Acharya</span>
+              Hello I'm <br /> <span className="text-accent md:text-[100px] text-[60px] ">Subhrodeep Acharya</span>
             </h1>
             <p className="max-w-[550px] mb-9 text-white/80">
               I excel at crafting elegent digital experience and I am proficient in various programing languages and technologies.
@@ -33,7 +33,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="order-1 xl:order-none mb-8 xl:mb-0 xl:pr-10 pt-2">
+          <div className="order-1 xl:order-none mb-8 xl:mb-0 xl:pr-10 ml-8 xl:ml-0 pt-2">
             <Photo />
           </div>
         </div>

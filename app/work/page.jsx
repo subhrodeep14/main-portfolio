@@ -58,10 +58,12 @@ const work = () => {
     setProject(projects[currentIndex]);
   }
   return (
-   < motion.section initial={{opacity:0}} animate={{opacity:1,transition:{duration:0.4,delay:2.4 ,ease:"easeIn"}}} className='min-h-[80vh] flex flex-col justify-center'>
-      <div className="container mx-auto">
+   < motion.section 
+   initial={{opacity:0}} animate={{opacity:1,transition:{duration:0.2,delay:1 ,ease:"easeIn"}}}
+   className='min-h-[80vh] flex flex-col justify-center'>
+      <div className="px-4 md:container mx-auto">
         <div className='flex flex-col xl:flex-row xl:gap-[30px]'>
-          <div className='w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none'>
+          <div className='w-[350px] xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none'>
             <div className='flex flex-col gap-[30px] h-[50%]'>
               <div className='text-8xl leading-none font-extrabold text-transparent text-outline'>
                 {project.num}
@@ -110,7 +112,7 @@ const work = () => {
               
             </div>
           </div>
-          <div className='w-full xl:w-[50%]'>
+          <div className='w-[350px] xl:w-[50%]'>
                 <Swiper spaceBetween={30}
                 slidesPerView={1}
                 className='xl:h-[520px] mb-12'
