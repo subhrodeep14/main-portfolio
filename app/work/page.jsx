@@ -21,7 +21,7 @@ const projects=[
   title:"project 1",
   description:"",
   stack:[{name:"React.js"},{name:"Tailwindcss"}],
-  image:"/work/thumb1.png",
+  image:"/project1.png",
   live:"https://real-estate-nine-blush.vercel.app/",
   github:"https://github.com/subhrodeep14/Real-Estate"
 },  {
@@ -50,7 +50,7 @@ const projects=[
 
 const work = () => {
 
-  const[project,setProject]=useState(projects[1]);
+  const[project,setProject]=useState(projects[0]);
 
   const handleSlideChange=(swiper)=>{
     const currentIndex =swiper.activeIndex;
