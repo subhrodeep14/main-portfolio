@@ -8,15 +8,11 @@ const Photo = () => {
     <div className="w-full h-full relative">
       <motion.div initial={{opacity:0}} animate={{opacity:1,transition:{
         deley:2,
-        duration:4,
+        duration:2,
         ease:"easeIn",
       }}}>
         <motion.div 
-        initial={{opacity:0}} animate={{opacity:1,transition:{
-          deley:0.4,
-          duration:2,
-          ease:"easeInOut",
-        }}}
+       
         className="w-[265px] h-[265px] xl:w-[398px] xl:h-[398px] mix-blend-lighten absolute overflow-hidden rounded-full top-0 left-0 z-10 object-fit-cover">
         <Image
           quality={100}

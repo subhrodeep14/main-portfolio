@@ -33,16 +33,7 @@ const projects=[
   image:"/work/thumb1.png",
   live:"",
   github:""
-},  {
-  num:"03",
-  category:"frontend",
-  title:"project 3",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  stack:[{name:"Html 5"},{name:"Css 3"},{name:"Javascript"}],
-  image:"/work/thumb1.png",
-  live:"",
-  github:""
-},
+}, 
 
 ]
 
