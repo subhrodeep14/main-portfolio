@@ -15,25 +15,26 @@ import WorkSliderBtns from '@/components/WorkSliderBtns';
 
 
 const projects=[
-  {
+    {
   num:"01",
-  category:"Frontend",
+  category:"Fullstack",
+  title:"project 2",
+  description:"A full-stack application built with Next.js, TypeScript, and Tailwind CSS,prisma and postgresql featuring a responsive design and a user-friendly interface.",
+  stack:[{name:"Next.js"},{name:"TypeScript"},{name:"Tailwindcss"},{name:"Prisma"},{name:"PostgreSQL"}],
+  image:"/project2.png",
+  live:"https://www.therobosphere.co.in/",
+  github:"https://github.com/subhrodeep14/Robo-Sphere"
+}, 
+  {
+  num:"02",
+  category:"Fullstack",
   title:"project 1",
-  description:"",
+  description:"A full-stack application built with React.js and Tailwind CSS featuring a responsive design and a user-friendly interface.",
   stack:[{name:"React.js"},{name:"Tailwindcss"}],
   image:"/project1.png",
   live:"https://real-estate-nine-blush.vercel.app/",
   github:"https://github.com/subhrodeep14/Real-Estate"
-},  {
-  num:"02",
-  category:"frontend",
-  title:"project 2",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  stack:[{name:"Html 5"},{name:"Css 3"},{name:"Javascript"}],
-  image:"/work/thumb1.png",
-  live:"",
-  github:""
-}, 
+},
 
 ]
 
@@ -54,7 +55,7 @@ const work = () => {
    className='min-h-[80vh] flex flex-col justify-center'>
       <div className="px-4 md:container mx-auto">
         <div className='flex flex-col xl:flex-row xl:gap-[30px]'>
-          <div className='w-[350px] xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none'>
+          <div className='w-[350px] xl:w-[40%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none'>
             <div className='flex flex-col gap-[30px] h-[50%]'>
               <div className='text-8xl leading-none font-extrabold text-transparent text-outline'>
                 {project.num}
@@ -63,7 +64,7 @@ const work = () => {
 
               <p className='text-white/60'>{project.description}</p>
 
-              <ul className='gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
+              <ul className='gap-4 grid grid-cols-2 md:grid-cols-3 '>
                 {project.stack.map((item,index)=>{
                   return <li key={index} className='text-xl text-accent ' >{item.name}
                   {index !== project.stack.length -1 && ","}
@@ -103,7 +104,7 @@ const work = () => {
               
             </div>
           </div>
-          <div className='w-[350px] xl:w-[50%]'>
+          <div className='w-[350px] xl:w-[60%]'>
                 <Swiper spaceBetween={30}
                 slidesPerView={1}
                 className='xl:h-[520px] mb-12'
@@ -117,7 +118,7 @@ const work = () => {
                      <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                      <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 '></div>
                      <div className='relative w-full h-full'>
-                      <Image src={project.image} alt="" fill className=' object-cover '/>
+                      <Image src={project.image} alt="" fill className=' md:object-fit object-cover  '/>
                      </div>
                      </div></SwiperSlide>
                   })}
