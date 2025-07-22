@@ -3,6 +3,8 @@ import { Info } from "lucide-react"
 import { FaHtml5,FaCss3,FaJs,FaFigma,FaNodeJs,FaReact} from "react-icons/fa"
 import { SiTypescript ,SiPrisma,SiMongodb, SiPostgresql, SiGithub} from "react-icons/si";
 import Image from "next/image"
+import { PiStudent } from "react-icons/pi";
+
 
 import {SiTailwindcss,SiNextdotjs} from "react-icons/si"
 
@@ -26,13 +28,19 @@ const about={
 }
 
 const exprerience={
-  icon:"/resume/badge.svg",
+
   title:" My Experience",
   description:" Gained hands-on experience in building full-stack applications, and confident in delivering similar projects end-to-end.",
-  items:[{
-    company:"Freelance",
+  items:[
+  {
+    company:"Bluestocks Fintech",
+    role:"Software Developer Engineer Intern",
+    duration:"June 2025 - July 2025",
+  },
+  {
+    company:"Robo Sphere",
     role:"Full Stack web Developer",
-    duration:"2025-present",
+    duration:"May 2025 - June 2025",
   },
   
 ]
@@ -170,6 +178,7 @@ const resume = () => {
           </TabsContent>
           <TabsContent value="ex" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
+
                 <h3 className="text-4xl font-bold text-accent">{exprerience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{exprerience.description}</p>               
                 <ScrollArea className="h-[400px]">
