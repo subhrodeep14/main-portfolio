@@ -15,8 +15,18 @@ import WorkSliderBtns from '@/components/WorkSliderBtns';
 
 
 const projects=[
-    {
+   {
   num:"01",
+  category:"Fullstack",
+  title:"project 1",
+  description:"A full-stack saas application with React.js, JavaScript, Tailwind CSS, Node.js, Express.js, Postgresql featuring a responsive design and a user-friendly interface.",
+  stack:[{name:"React.js"},{name:"javaScript"},{name:"Tailwindcss"},{name:"Node"},{name:"PostgreSQL"}],
+  image:"/project-saas.png",
+  live:"https://quick-ai-brown-alpha.vercel.app/",
+  github:"https://github.com/subhrodeep14/Quick.ai"
+},
+    {
+  num:"02",
   category:"Fullstack",
   title:"project 2",
   description:"A full-stack application built with Next.js, TypeScript, and Tailwind CSS,prisma and postgresql featuring a responsive design and a user-friendly interface.",
@@ -26,9 +36,9 @@ const projects=[
   github:"https://github.com/subhrodeep14/Robo-Sphere"
 }, 
   {
-  num:"02",
+  num:"03",
   category:"Fullstack",
-  title:"project 1",
+  title:"project 3",
   description:"A full-stack application built with React.js and Tailwind CSS featuring a responsive design and a user-friendly interface.",
   stack:[{name:"React.js"},{name:"Tailwindcss"}],
   image:"/project1.png",
@@ -104,7 +114,7 @@ const work = () => {
               
             </div>
           </div>
-          <div className='w-[350px] xl:w-[60%]'>
+          <div className='w-[300px] xl:w-[60%]'>
                 <Swiper spaceBetween={30}
                 slidesPerView={1}
                 className='xl:h-[520px] mb-12'
@@ -115,10 +125,10 @@ const work = () => {
                 >
                   {projects.map((project,index)=>{
                     return <SwiperSlide key={index} className='w-full' > 
-                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                     <div className="h-[450px] relative group flex justify-center items-center bg-pink-50/20">
                      <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 '></div>
                      <div className='relative w-full h-full'>
-                      <Image src={project.image} alt="" fill className=' md:object-fit object-cover  '/>
+                      <Image src={project.image} alt="" fill className=' md:object-fill object-fill  '/>
                      </div>
                      </div></SwiperSlide>
                   })}
