@@ -21,7 +21,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button variant="outline" size="lg" href="/myCV.pdf" download>
-                <a href="/subhrodeep_acharya.pdf" download={ true }
+                <a href="/resume.pdf" download={ true }
                   target={"_blank"}
                   rel="noopener noreferrer" className="flex gap-2 items-center uppercase">
                   <span>Download cv</span>
